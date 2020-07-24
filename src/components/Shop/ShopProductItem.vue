@@ -16,7 +16,7 @@
     <div>
       <span> {{ product.price }} €</span>
     </div>
-    <button @click="addProductToCart" class="btn btn-primary btn-sm float-right">Commander</button>
+    <button @click="addProductToCart()" class="btn btn-primary btn-sm float-right">Commander</button>
 
   </div>
 </template>
@@ -27,11 +27,13 @@
   } from "../../main.js"
 
   export default {
-    props: ["product"],
+    props: ['product'],
     methods: {
       addProductToCart() {
-        eventBus.addProductToCart({ ... this.product}        
-        )
+        eventBus.addProductToCart({
+          ...this.product
+        });
+        console.log(this.product)
       }
 
     }

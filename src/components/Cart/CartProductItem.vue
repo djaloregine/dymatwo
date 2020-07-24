@@ -5,7 +5,7 @@
     <span > {{ item.price }} € </span>
 
     <button class="close" @click="removeItemCart"> </button>
-    <span>&times</span>
+    <span>&times;</span>
 
   </div>
 </template>
@@ -17,7 +17,7 @@ import {eventBus} from "../../main.js"
    props:["item"],
    methods: {
      removeItemCart() {
-       eventBus.removeItemCart(...this.item)
+       eventBus.removeItemCart({ ...this.item});
      }
    }
   }

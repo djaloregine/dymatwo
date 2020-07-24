@@ -16,10 +16,10 @@ export default {
     }
   },
   created() {
-    this.cart = eventBus.cart
-    eventBus.$on("update.cart", (cart)=> {
+    this.cart = eventBus.cart;
+    eventBus.$on("update.cart", cart=> {
       this.cart = cart;
-    })
+    });
   }
 }
 </script>
