@@ -6,8 +6,11 @@ import Shop from "./components/Shop/Shop";
 
 Vue.use(VueRouter); 
 
-export default new VueRouter ({
+const router = new VueRouter ({
+mode: 'history',
     routes : [ 
+        {path: '*',
+    component: TheHead.vue},
        {path : '/',
     component: TheHead.vue }, 
     {path: '/Administration', 
@@ -18,3 +21,5 @@ component: Cart.vue}, {
 
     ]
 })
+
+export default router; 
