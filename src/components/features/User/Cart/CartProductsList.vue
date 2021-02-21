@@ -14,7 +14,15 @@
         components: {
             CartProductItem
         },
-       props : ["cart"]
+       props : ["cart"],
+       computed: {
+    total() {
+      return this.cart.reduce((acc, v) => {
+        acc += v.price;
+        return acc;
+      }, 0)
+    }
+    }
     }
 </script>
 

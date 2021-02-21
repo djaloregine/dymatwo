@@ -2,9 +2,8 @@
   <div id="app">
 
     <TheHead></TheHead>
-    <div class="d-flex flex-row ">
-      <Shop class="d-flex w-75"> Shop </Shop>
-      <Cart class="d-flex w-25"> Cart </Cart>
+    <div class="d-flex flex-column w-100">
+        <component :is="page" ></component>
     </div>
 
   </div>
@@ -12,15 +11,12 @@
 
 <script>
   import TheHead from "./components/TheHead"
-  import Shop from "./components/Shop/Shop"
-  import Cart from "./components/Cart/Cart"
+ 
 
   export default {
     name: 'App',
     components: {
-      TheHead,
-      Shop,
-      Cart,
+      TheHead
     }
   }
 </script>

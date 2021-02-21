@@ -1,4 +1,5 @@
 <template>
+<transition appear>
   <div>
     <nav class="navbar  navbar-light bg-info navbar-expand-lg">
       <a class="navbar-brand" href="#">
@@ -12,20 +13,38 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#"> Boutique </a>
+          <router-link class="nav-link" to="/shop">Boutique</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"> Administration </a>
+          <router-link class="nav-link" to="/admin">Admin</router-link>
         </li>
       </ul>
     </div>
      </nav>
   </div>
+  </transition>
 </template>
 
 <script>
   export default {
-
+directives: {
+    triggerCollapse: {
+      inserted(el, binding) {
+        window.addEventListener('click', () => {
+          nav.classList.remove('show');
+        })
+        const nav = document.querySelector('#' + binding.value);
+        el.addEventListener('click', (e) => {
+          if (nav.classList.contains('show')) {
+            nav.classList.remove('show');
+          } else {
+            nav.classList.add('show');
+          }
+          e.stopPropagation();
+        })
+      }
+    }
+  }
   }
 </script>
 

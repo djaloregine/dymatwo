@@ -33,7 +33,7 @@
         eventBus.addProductToCart({
           ...this.product
         });
-        console.log(this.product)
+
       }
 
     }

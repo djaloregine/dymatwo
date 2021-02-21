@@ -1,22 +1,22 @@
 import Vue from "vue";  
 import VueRouter from "vue-router";
-import TheHead from "./components/TheHead";
-import Cart from "./components/Cart/Cart";
-import Shop from "./components/Shop/Shop";
+
+import Admin from "./components/features/Admin/Admin.vue";
+import User from "./components/features/User/User.vue";
 
 Vue.use(VueRouter); 
 
 const router = new VueRouter ({
 mode: 'history',
     routes : [ 
-        {path: '*',
-    component: TheHead.vue},
+        {path : '*',
+        redirect: '/shop'},
        {path : '/',
-    component: TheHead.vue }, 
-    {path: '/Administration', 
-component: Cart.vue}, {
-    path: '/Boutique', 
-    component: Shop.vue
+    redirect: '/shop' }, 
+    {path: '/shop', 
+component: User}, {
+    path: '/admin', 
+    component: Admin
 }
 
     ]
