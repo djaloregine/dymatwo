@@ -9,15 +9,15 @@ Vue.use(VueRouter);
 const router = new VueRouter ({
 mode: 'history',
     routes : [ 
-        {path : '*',
-        redirect: '/shop'},
        {path : '/',
     redirect: '/shop' }, 
     {path: '/shop', 
 component: User}, {
     path: '/admin', 
     component: Admin
-}
+},
+{path : '*',
+        redirect: '/shop'}
 
     ]
 })

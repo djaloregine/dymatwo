@@ -3,7 +3,7 @@
 
     <TheHead></TheHead>
     <div class="d-flex flex-column w-100">
-        <component :is="page" ></component>
+       <router-view></router-view>
     </div>
 
   </div>

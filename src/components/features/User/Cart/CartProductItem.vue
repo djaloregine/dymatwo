@@ -11,15 +11,9 @@
 </template>
 
 <script>
-import {eventBus} from "../../main.js"
-
   export default {
    props:["item"],
-   methods: {
-     removeItemCart() {
-       eventBus.removeItemCart({ ...this.item});
-     }
-   }
+   
   }
 </script>
 

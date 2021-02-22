@@ -4,7 +4,8 @@
 
 <script>
 import CartProductsList from "./CartProductsList"
-import {eventBus} from "../../main.js"
+ import { eventBus } from '../../../../main';
+
 
 export default {
   components : {
@@ -15,11 +16,11 @@ export default {
       cart : []
     }
   },
-  created() {
+   created() {
     this.cart = eventBus.cart;
-    eventBus.$on("update.cart", cart=> {
+    eventBus.$on('update:cart', (cart) => {
       this.cart = cart;
-    });
+    })
   }
 }
 </script>

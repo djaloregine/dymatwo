@@ -4,7 +4,7 @@
 
 <script>
 import ShopProductsList from "./ShopProductsList"
-import {eventBus} from "../../main.js"
+import {eventBus} from "../../../../main.js"
 
 export default {
   components : {
